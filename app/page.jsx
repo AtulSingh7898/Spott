@@ -1,7 +1,15 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-// import { Link } from "lucide-react";
+/**
+ * Render the home page hero section with title, description, call-to-action, and illustrative image.
+ *
+ * The component displays a branded tagline, a multi-line headline with a highlighted word,
+ * a short descriptive paragraph, a "Get Started" button linking to /explore, and a responsive hero image.
+ * Layout adapts responsively to screen size.
+ *
+ * @returns {JSX.Element} The hero section JSX for the home page.
+ */
 
 export default function Home() {
   return (
