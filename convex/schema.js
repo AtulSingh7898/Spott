@@ -1,36 +1,6 @@
-// import { defineSchema, defineTable } from "convex/server";
-// import { v } from "convex/values";
-
-// export default defineSchema({
-//     users: defineTable({
-//         name: v.string(),
-//         tokenIdentifier: v.string(),
-//         name: v.string(),
-//         imageUrl: v.optional(v.string()),
-
-//         //boolean
-//         hasCompletedOnboarding: v.boolean(),
-
-//         location: v.optional(
-//             v.object({
-//               city: v.string(),
-//               state: v.optional(v.string()), // Added state field
-//               country: v.string(),
-//             })
-//         ),
-//         interests: v.optional(v.array(v.string())), // Min 3 categories
-
-//     // Organizer tracking (User Subscription)
-//        freeEventsCreated: v.number(), // Track free event limit (1 free)
-
-//     // Timestamps
-//       createdAt: v.number(),
-//       updatedAt: v.number(),
-//     }).index("by_token", ["tokenIdentifier"]),
-// })
-
 import { defineSchema, defineTable } from "convex/server";
 import { v } from "convex/values";
+
 
 export default defineSchema({
   // Users table
@@ -41,7 +11,7 @@ export default defineSchema({
     name: v.string(),
     imageUrl: v.optional(v.string()),
 
-    // Onboarding
+    // Onboarding Onboarding
     hasCompletedOnboarding: v.boolean(),
 
     // Attendee preferences (from onboarding)
@@ -75,6 +45,7 @@ export default defineSchema({
     // Event details
     category: v.string(),
     tags: v.array(v.string()),
+    
 
     // Date & Time
     startDate: v.number(),
@@ -120,6 +91,7 @@ export default defineSchema({
 
     // QR Code for entry
     qrCode: v.string(), // Unique ID for QR
+    
 
     // Check-in
     checkedIn: v.boolean(),

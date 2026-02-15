@@ -1,5 +1,5 @@
 import { mutation, query } from "./_generated/server";
-import { api } from "./_generated/api";
+import { api, internal } from "./_generated/api";
 import { v } from "convex/values";
 
 export const store = mutation({
@@ -82,7 +82,7 @@ export const completeOnboarding = mutation({
         throw new Error("At least 3 interests required");
       }
 
-      const user = await ctx.runQuery(api.users.getCurrentUser);
+      const user = await ctx.runQuery(internal.users.getCurrentUser);
   
       if (!user) {
         throw new Error("User not found");
@@ -100,3 +100,13 @@ export const completeOnboarding = mutation({
   });
   
   
+// export const hasCompletedOnboarding = mutation({
+//     args: {
+//       location: v.object({
+//         city: v.string(),
+//         state: v.optional(v.string()), // Added state field
+//         country: v.string(),
+//       }),
+//       interests: v.array(v.string()), // Min 3 categories
+//     },
+//    });

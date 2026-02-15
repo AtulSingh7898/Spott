@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+// import explore from "./(public)/explore/layout"
 // import { Link } from "lucide-react";
 
 export default function Home() {
@@ -25,24 +26,27 @@ export default function Home() {
               memorable. Join our community today.
             </p>
 
-            <Link href="/explore">
-              <Button size="xl" className={"rounded-full"}>
+            <Link href="./explore">
+              <Button size="xl" className={"rounded-full"} suppressHydrationWarning>
                 Get Started
               </Button>
             </Link>
           
           </div>
-          {/* right  */}
+          <div className=" sm:w-full">
+            {/* right  */}
           <Image
-              src="/hero.png"
+              src="/hero.gif"
               // src="/hero.gif"
               alt="react meetup"
-              width={700}
-              height={700}
+              width={400}
+              height={400}
               className="w-full h-auto"
               priority
             />
+          </div>
         </div>
+
       </section>
     </div>
   );
